@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+  * {
+    margin: 0;
+    color: #FFFFFF;
+      font-family: "Poppins", sans-serif;
+  }
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .login {
+    width: 800px;
+    height: 500px;
+    background-color: #752A89;
+    border-radius: 5px;
+    border: 2px solid black;
+    display: flex;
+  }
+  section {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    gap: 15px;
+  }
+  input, button {
+    height: 40px;
+    padding: 0px 10px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #515151;
+    font-size: 14px;
+    color: #DADADA;
+  }
+</style>
+<body>
+  <div class="login">
+    <section style="background-color: #FFFFFF;">
+      <img src="assets umum/Logo Gram.png" alt="" style="width: 250px; height: 250px;">
+      <h1 style="color: #515151; text-align: center;">UNIVERSITAS AMIKOM YOGYAKARTA</h1>
+    </section>
+    <section>
+      <div class="card">
+        <h1 style="margin-bottom: 10px; font-size: 28px; font-weight: 400;">Login</h1>
+        <form action="">
+          <input type="text" placeholder="E-mail" name="" id="">
+          <input type="password" placeholder="Password" name="" id="">
+          <button style="background-color: #FF9919; color: #FFFFFF;">Login</button>
+          <p style="text-align: center; font-size: 10px;">OR</p>
+          <button style="background-color: #FFFBFB;">Google</button>
+        </form>
+      </div>
+    </section>
+  </div>
+</body>
+</body>
+</html>
