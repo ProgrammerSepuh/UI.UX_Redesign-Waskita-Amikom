@@ -39,7 +39,6 @@
     display: flex;
     flex-direction: column;
     width: 300px;
-    gap: 15px;
   }
   input {
     color: #515151;
@@ -61,10 +60,13 @@
     position: absolute;
     transform: translateY(-300px);
   }
+  input::placeholder {
+    font-weight: 300;
+  }
 </style>
 <body>
   <div class="alert" id="alert">
-    <h3 style="font-size: 14px; font-weight: 300;">Login Gagal</h3>
+    <h3 style="font-size: 14px; font-weight: 300; display: flex; align-items: center; gap: 5px;"><img src="assets umum/Frame 14.png" alt="">Login Gagal</h3>
     <p style="font-size: 8px;">Priksa kembali email dan password anda</p>
   </div>
   <div class="login">
@@ -77,10 +79,12 @@
         <h1 style="margin-bottom: 10px; font-size: 28px; font-weight: 400;">Login</h1>
         <form action="">
           <input type="text" placeholder="E-mail" name="" id="email">
+          <br>
           <input type="password" placeholder="Password" name="" id="password">
+          <br>
           <button type="button" style="background-color: #FF9919; color: #FFFFFF;" onclick="login()">Login</button>
           <p style="text-align: center; font-size: 10px;">OR</p>
-          <button type="button" style="background-color: #FFFBFB; color: #515151;" onclick="login()">Google</button>
+          <button type="button" style="background-color: #FFFBFB; color: #515151; display: flex; justify-content: center; align-items: center; gap: 10px;" onclick="login()"><img src="assets umum/Vector.png" alt="">Email Amikom</button>
         </form>
       </div>
     </section>
