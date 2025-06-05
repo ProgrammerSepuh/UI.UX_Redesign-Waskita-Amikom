@@ -94,11 +94,12 @@
       console.log(email);
       console.log(password);
 
-      if(email == "HalloBapak" && password =="1234567"){
-        alert("alert berhasil");
+      if(email == "sayadosen@amikom.ac.id" && password =="amikom"){
         window.location.href="welcome.html"
       }else {
         alert.style.display = 'block'
+        document.getElementById('email').value = "";
+        document.getElementById('password').value= "";
       }
   }
 </script>

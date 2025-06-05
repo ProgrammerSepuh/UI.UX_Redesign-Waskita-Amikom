@@ -3,9 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <title>Document</title>
 </head>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+  * {
+        margin: 0;
+        color: #FAFAFA;
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+    }
+    nav {
+        background-color: #752A89;
+        display: flex;
+        padding: 10px 5%;
+        justify-content: space-between;
+        align-items: center;
+        height: 50px;
+        color: #DADADA;
+    }
+    .focus {
+        display: none;
+        content: '';
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        background-color: #515151cc;
+        z-index: 98;
+    }
+    img {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+    span {
+        display: flex;
+        align-items:center;
+        gap: 5px;
+        position: relative;
+    }
+    .notif::after {
+    content: "1";
+    position: absolute;
+    z-index: 97;
+    transform: translateX(-20px);
+    background-color: #FF9919;
+    width: 14px;
+    height: 14px;
+    font-size: 10px;
+    text-align: center;
+    border-radius: 7px;
+    }
+    .notif {
+        height: 40px;
+    }
+    .alert {
+        width: 300px;
+        height: 100vh;
+        background-color: #DADADA;
+        position: fixed;
+        z-index: 99;
+        right: 0px;
+        transform: translateX(100%);
+        transition: ease-in 200ms;
+    }
+    .alert.active {
+        transform: translateX(0px);
+    }
+</style>
 <body>
-    <h3>Welcome gussss</h3>
+    <div class="alert" id="alert">
+        <nav>        
+            <i class="fa-solid fa-xmark" id="tutup"></i>    
+            <h3 style="width: 200px;">Notifikasi</h3>
+        </nav>
+    </div>
+    <div class="focus" id="backgroundGelap"></div>
+    <nav>
+        <span>
+            <img src="assets umum/Logo Gram.png" alt="">
+            <h3>Waskita</h3>
+        </span>
+        <span>
+            <div class="notif">
+                <img src="assets umum/notification.png" alt="" id="buka">
+            </div>
+            <img src="assets umum/photo.jpg" style="border-radius: 25px; border: 2px solid #FAFAFA; margin: 0px 0px 0px 20px;" alt="">
+        </span>
+    </nav>
 </body>
+<script>
+    const alert = document.getElementById("alert");
+    const focus = document.getElementById('backgroundGelap')
+    const tombolbuka = document.getElementById("buka");
+    const tomboltutup = document.getElementById('tutup');
+
+    tombolbuka.addEventListener("click", function(){
+        alert.classList.add("active")
+        focus.style.display = "block"
+    })
+        tomboltutup.addEventListener("click", function(){
+        alert.classList.remove("active")
+        focus.style.display = "none"
+    })
+</script>
 </html>
