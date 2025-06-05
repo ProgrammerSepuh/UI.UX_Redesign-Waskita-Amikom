@@ -41,6 +41,9 @@
     width: 300px;
     gap: 15px;
   }
+  input {
+    color: #515151;
+  }
   input, button {
     height: 40px;
     padding: 0px 10px;
@@ -48,10 +51,22 @@
     outline: none;
     border: 1px solid #515151;
     font-size: 14px;
-    color: #DADADA;
+  }
+  .alert {
+    display: none;
+    background-color: red;
+    width: 200px;
+    padding: 20px;
+    border-radius: 5px;
+    position: absolute;
+    transform: translateY(-300px);
   }
 </style>
 <body>
+  <div class="alert" id="alert">
+    <h3 style="font-size: 14px; font-weight: 300;">Login Gagal</h3>
+    <p style="font-size: 8px;">Priksa kembali email dan password anda</p>
+  </div>
   <div class="login">
     <section style="background-color: #FFFFFF;">
       <img src="assets umum/Logo Gram.png" alt="" style="width: 250px; height: 250px;">
@@ -61,15 +76,30 @@
       <div class="card">
         <h1 style="margin-bottom: 10px; font-size: 28px; font-weight: 400;">Login</h1>
         <form action="">
-          <input type="text" placeholder="E-mail" name="" id="">
-          <input type="password" placeholder="Password" name="" id="">
-          <button style="background-color: #FF9919; color: #FFFFFF;">Login</button>
+          <input type="text" placeholder="E-mail" name="" id="email">
+          <input type="password" placeholder="Password" name="" id="password">
+          <button type="button" style="background-color: #FF9919; color: #FFFFFF;" onclick="login()">Login</button>
           <p style="text-align: center; font-size: 10px;">OR</p>
-          <button style="background-color: #FFFBFB;">Google</button>
+          <button type="button" style="background-color: #FFFBFB; color: #515151;" onclick="login()">Google</button>
         </form>
       </div>
     </section>
   </div>
 </body>
-</body>
+<script>
+  function login(){
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      const alert = document.getElementById('alert');
+      console.log(email);
+      console.log(password);
+
+      if(email == "HalloBapak" && password =="1234567"){
+        alert("alert berhasil");
+        window.location.href="welcome.html"
+      }else {
+        alert.style.display = 'block'
+      }
+  }
+</script>
 </html>
