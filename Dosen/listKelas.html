@@ -27,7 +27,7 @@
         color: #DADADA;
     }
     .focus {
-        display: block;
+        display: none;
         content: '';
         width: 100%;
         height: 100vh;
@@ -107,33 +107,30 @@
     .filter {
         display: none;
         width: 150px;
-        height: 300px;
-        background-color: #752A89;
+        background-color: #FAFAFA;
         position: absolute;
-        transform: translateY(320px);
+        transform: translateY(120px);
         color: #000000;
+        z-index: 99;
+
     }
     section {
-        width: 100%;
-        height: 900px;
+        padding: 0px 5% 20px 5%;
     }
-    .filter {
-    }
-    .filter .card {
+    .filter form {
         display: flex;
-        gap: 10px;
+        flex-direction: column;
         margin: 10px;
-        background-color: #DADADA;
-        padding: 5px 10px;
+        align-items: center; 
     }
-    .alert section div {
+    .alert .alertList div {
         display: flex;
         background-color: #FAFAFA;
         height: 60px;
         align-items: center;
         justify-content: space-around;
     }
-    .alert section div::before {
+    .alert .alertList div::before {
         position: absolute;
         left: 0px;
         content: "";
@@ -141,43 +138,103 @@
         height: 60px;
         background-color: #04D63C;
     }
+    .listkelas {
+        padding: 20px 0px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    section .cards {
+        background-color: #04D63C;
+        padding: 0px 40px;
+        height: 123px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-radius: 5px;
+
+    }
+    section .cards span {
+        display: flex;
+        justify-content: space-between;
+    }
+    .backCard {
+        height: 123px;
+        display: flex;
+        position: absolute;
+        width: 90%;
+        transform: translate(-40px, -0px);
+        z-index: 1;
+        border-radius: 5px;
+    }
+    footer {
+        background-color: #752A89;
+        width: 100%;
+        height: 20px;
+        position: fixed;
+        bottom: 0px;
+        z-index: 99;
+        font-size: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #FAFAFA;
+    }
 </style>
 <body>
-    <div class="alert active" id="alert">
+    <div class="alert" id="alert">
         <nav>        
             <i class="fa-solid fa-xmark" id="tutup"></i>    
             <h3 style="width: 200px;">Notifikasi</h3>
         </nav>
-        <section id="alertList">
-        </section>
+        <div class="alertList" id="alertList">
+        </div>
     </div>
     <div class="focus" id="backgroundGelap"></div>
     <nav>
         <span>
-            <img src="assets umum/Logo Gram.png" alt="">
+            <img src="../assets umum/Logo Gram.png" alt="">
             <h3>Waskita</h3>
         </span>
         <span>
             <div class="notif">
-                <img src="assets umum/notification.png" alt="" id="buka">
+                <img src="../assets umum/notification.png" alt="" id="buka">
             </div>
-            <img src="assets umum/photo.jpg" style="border-radius: 25px; border: 2px solid #FAFAFA; margin: 0px 0px 0px 20px;" alt="">
+            <img src="../assets umum/photo.jpg" style="border-radius: 25px; border: 2px solid #FAFAFA; margin: 0px 0px 0px 20px;" alt="">
         </span>
     </nav>
     <header>
-        <input type="text" placeholder="Search" id="search">
+        <input type="text" placeholder="Search" id="search" onclick="cari">
         <span id="buttomFilter">
-            <img src="assets umum/equalizer.png" style="width: 20px; height: 20px;" alt="">
+            <img src="../assets umum/equalizer.png" style="width: 20px; height: 20px;" alt="">
             Filter
         </span>
         <div class="filter" id="filter">
-            <div class="card">
-                <input type="radio">
-                <p>hallo</p>
-            </div>
+            <form action="">
+                <div class="pilihan" style=" width: 90%; padding: 10px; font-size: 16px;">
+                    <label style="background-color: #DADADA; padding: 5px 10px; margin: 0px 0px 10px 0px; display: flex; justify-content: space-between;" onclick="tampilkan"><input type="radio" style="margin: 0px 20px 0px 0px; " checked name="sort" id="urut" value="asc">  A-Z</label>
+                    <label style="background-color: #DADADA; padding: 5px 10px; display: flex; justify-content: space-between;" onclick="tampilkan"><input type="radio" style="margin: 0px 20px 0px 0px;" name="sort" id="urut" value="desc"> Z-A</label>
+                </div>
+            </form>
         </div>
     </header>
-    <section></section>
+    <section>
+        <div class="baruDilihat">
+            <p>Recently Acess</p>
+            <div class="cards" style="background-image: url(assets/tekstur.jpg); background-position: center; background-size: cover; overflow: hidden;" >
+                <div class="backCard" style="background-color: rgba(4, 214, 60, 0.6);"></div>
+                <span style="position: relative; z-index: 91;"><h3 style="font-size: 26px;">2025-Genap</h3><i class="fa-solid fa-ellipsis" style="color: #FAFAFA;"></i></span>
+                <p style="position: relative; z-index: 91; font-size: 18px;" >SI06 - REKAYASA PERANGKAT LUNAK</p>
+            </div>
+        </div>
+        <p>Course Overview</p>
+        <div class="listkelas" id="daftarKelas">
+        </div>
+        <p>Course Complite</p>
+        <div class="listkelas" id="kelasSelesai">
+        </div>
+    </section>
+    <footer>© 2025 Universitas Amikom Yogyakarta | Dikembangkan oleh Kelompok Firefly | Tugas Proyek UI/UX</footer>
 </body>
-<script src="kelas.js"></script>
+<script src="assets/js/kelas.js"></script>
 </html>

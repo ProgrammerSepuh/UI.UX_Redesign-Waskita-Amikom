@@ -66,12 +66,12 @@
 </style>
 <body>
   <div class="alert" id="alert">
-    <h3 style="font-size: 14px; font-weight: 300; display: flex; align-items: center; gap: 5px;"><img src="assets umum/Frame 14.png" alt="">Login Gagal</h3>
+    <h3 style="font-size: 14px; font-weight: 300; display: flex; align-items: center; gap: 5px;"><img src="../assets umum/Frame 14.png" alt="">Login Gagal</h3>
     <p style="font-size: 8px;">Priksa kembali email dan password anda</p>
   </div>
   <div class="login">
     <section style="background-color: #FFFFFF;">
-      <img src="assets umum/Logo Gram.png" alt="" style="width: 250px; height: 250px;">
+      <img src="../assets umum/Logo Gram.png" alt="" style="width: 250px; height: 250px;">
       <h1 style="color: #515151; text-align: center;">UNIVERSITAS AMIKOM YOGYAKARTA</h1>
     </section>
     <section>
@@ -90,21 +90,5 @@
     </section>
   </div>
 </body>
-<script>
-  function login(){
-      const email = document.getElementById('email').value;
-      const password = document.getElementById('password').value;
-      const alert = document.getElementById('alert');
-      console.log(email);
-      console.log(password);
-
-      if(email == "sayadosen@amikom.ac.id" && password =="amikom"){
-        window.location.href="welcome.html"
-      }else {
-        alert.style.display = 'block'
-        document.getElementById('email').value = "";
-        document.getElementById('password').value= "";
-      }
-  }
-</script>
+<script src="assets/js/kelas.js"></script>
 </html>
