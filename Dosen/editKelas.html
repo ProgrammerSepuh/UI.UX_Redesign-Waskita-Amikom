@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        * {
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+        }
+            body {
+            background-color: #D9D9D9;
+        }
+        h1 {
+            font-size: 26px;
+            font-weight: 400;
+        }
+        h2 {
+            font-weight: 400;
+            font-size: 18px;
+        }
+        h3 {
+            font-size: 16px;
+            font-weight: 400;
+        }
+        nav {
+            background-color: #752A89;
+            display: flex;
+            padding: 10px 5%;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            color: #DADADA;
+        }
+        .focus {
+            display: none;
+            content: '';
+            width: 100%;
+            height: 100vh;
+            position: absolute;
+            background-color: #515151cc;
+            z-index: 98;
+        }
+        img {
+            width: 40px;
+            height: 40px;
+            font-size: 18px;
+        }
+        nav span {
+            display: flex;
+            align-items:center;
+            gap: 5px;
+            position: relative;
+        }
+        /*header*/
+        header {
+            background-image: url(assets/tekstur.jpg);
+            background-size: cover;
+            height: 155px;
+            margin: 30px 0px;
+            padding: 0px 5%;
+            align-items: end;
+            display: flex;
+            justify-content: space-between;
+            
+
+        }
+        header span, header button {
+            position: relative;
+            z-index: 90;
+            margin-bottom: 20px;
+            font-size: 18px;
+            border-radius: 5px;
+            border: none;
+
+        }
+        header .addKelas button {
+            height: 40px;
+            width: 120px;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 155px;
+            background-color: rgba(298, 96, 97, 0.6);
+            z-index: 1;
+            transform: translateX(-5%);
+        }
+        .dropleft {
+            background-color: #FAFAFA;
+            padding: 5px 10px;
+            position: relative;
+            z-index: 97;
+            transform: translate(-140px, 40px);
+        }
+        label {
+            padding: 5px 20px;
+            background-color: #DADADA;
+            display: flex;
+            gap: 10px;
+            margin: 5px 0px;
+        }
+    </style>
+<body>
+    <nav>
+        <span>
+            <img src="../assets umum/Logo Gram.png" alt="">
+            <h2>WASKITA</h2>
+        </span>
+        <span>
+            <img src="../assets umum/photo.jpg" style="border-radius: 25px; border: 2px solid #FAFAFA; margin: 0px 0px 0px 20px;" alt="">
+        </span>
+    </nav>
+    <header>
+        <span>
+            <h1>2025 - Genap</h1>
+            <h2>SI06 - TUGAS PROJEK UI/UX</h2>
+        </span>
+        <div class="addKelas">
+            <div class="dropleft">
+                <label for=""><input type="checkbox" name="kelas" checked id="si06" value="hallo" onclick="inidicheck"><h3>SI06</h3></label>
+                <label for=""><input type="checkbox" name="kelas" id="si07" value="jumat" ><h3>SI07</h3></label>
+                <label for=""><input type="checkbox" name="kelas" id="si03" value="kamis" ><h3>SI03</h3></label>
+            </div>
+            <button>Add Kelas</button>
+        </div>
+    </header>
+    <section>
+        <div class="card"></div>
+    </section>
+</body>
+<script>
+    function inidicheck(){
+        const ini = document.getElementById("si06")
+    }
+</script>
+</html>
