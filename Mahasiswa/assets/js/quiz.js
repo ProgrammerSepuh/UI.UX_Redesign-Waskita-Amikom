@@ -362,7 +362,7 @@ document.getElementById("confirm-submit").addEventListener("click", () => {
   localStorage.setItem("quizScore", score);
 
   // Redirect ke halaman hasil
-  window.location.href = "quizx.html";
+  window.location.href = "quiz_hasil.html";
 });
 
 document.getElementById("confirm-submit").addEventListener("click", () => {
